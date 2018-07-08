@@ -41,7 +41,7 @@ export default class extends React.Component {
         }
         
         return  (
-             <div>
+            <div>
                 <Head>
                     <title>League Table</title>
                     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -68,7 +68,7 @@ export default class extends React.Component {
                         <Link href="/">Home</Link>
                     </div>
                 </div>
-             </div>
-            )
+            </div>
+        )
     }
 }
