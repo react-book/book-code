@@ -1,0 +1,13 @@
+{
+  "name": "v4-jsx",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "babel --plugins transform-react-jsx src/app.js > src/app-transpiled.js"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-plugin-transform-react-jsx": "^6.24.1"
+  }
+}

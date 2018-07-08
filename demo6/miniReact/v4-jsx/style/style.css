@@ -1,0 +1,17 @@
+.quote-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+}
+
+.quote {
+    font-size: 30px;
+    color: #757575;
+}
+
+.author {
+    align-self: flex-end;
+    font-style: italic;
+    font-size: 20px;
+    color: #a5a5a5;
+}
