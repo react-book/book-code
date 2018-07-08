@@ -1,7 +1,7 @@
-## Next.js
+# Next.js Project
 Next.js demo
 
-### Usage
+# Build & Run Instructions
 - `git clone`
 - `npm install`
 - `npm run dev`
