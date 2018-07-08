@@ -1,0 +1,16 @@
+{
+  "name": "react-universal-next",
+  "version": "1.0.0",
+  "description": "react-universal-next",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.15.3",
+    "next": "^1.2.3"
+  }
+}
