@@ -1,4 +1,14 @@
 # demo1
+Hello, World! 例子
+
+## 介绍
+
+```
+├── dist # 构建目录
+├── index.html # 运行文件
+├── src # 源文件
+└── webpack.config.js # webpack配置文件
+```
 
 ## 运行
 第一步，请先安装node（建议版本8.9.4）
