@@ -1,0 +1,105 @@
+{
+  "name": "redux-react-code-splitting-project",
+  "version": "1.2.0",
+  "scripts": {
+    "start": "webpack-dev-server --open --config webpack/webpack.config.dev.js",
+    "build": "rm -rf dist && webpack --config webpack/webpack.config.prod.js  && cp -a assets/ dist/",
+    "prod": "serve ./dist -s",
+    "lint": "eslint src",
+    "ngrok": "ngrok http -region eu 8080",
+    "test": "jest",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write --no-semi --single-quote --trailing-comma all",
+      "git add"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/didierfranc/redux-react-starter.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "async"
+  ],
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-eslint": "^7.2.3",
+    "babel-jest": "^20.0.3",
+    "babel-loader": "^7.1.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-runtime": "^6.23.0",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^15.0.2",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.1.0",
+    "html-webpack-plugin": "^2.29.0",
+    "husky": "^0.14.3",
+    "jest": "^21.1.0",
+    "lint-staged": "^4.0.1",
+    "preload-webpack-plugin": "^1.2.2",
+    "prettier": "^1.5.2",
+    "react-test-renderer": "^16.0.0",
+    "serve": "^6.0.2",
+    "webpack": "^3.1.0",
+    "webpack-dev-server": "^2.5.1"
+  },
+  "dependencies": {
+    "emotion": "^7.3.2",
+    "lodash": "^4.17.4",
+    "offline-plugin": "^4.8.3",
+    "react": "^16.0.0",
+    "react-code-splitting": "^1.1.1",
+    "react-dom": "^16.0.0",
+    "react-redux": "^5.0.5",
+    "react-router-dom": "^4.1.1",
+    "redux": "^3.7.1",
+    "redux-thunk": "^2.2.0"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "jest": true
+    },
+    "extends": "airbnb",
+    "parser": "babel-eslint",
+    "settings": {
+      "import/resolver": {
+        "webpack": {
+          "config": "webpack/webpack.config.dev.js"
+        }
+      }
+    },
+    "rules": {
+      "arrow-parens": [
+        "error",
+        "as-needed"
+      ],
+      "no-confusing-arrow": 0,
+      "no-shadow": 0,
+      "no-underscore-dangle": 0,
+      "semi": [
+        1,
+        "never"
+      ],
+      "import/no-extraneous-dependencies": 0,
+      "import/prefer-default-export": 0,
+      "import/no-duplicates": 0,
+      "react/jsx-filename-extension": [
+        1,
+        {
+          "extensions": [
+            ".js"
+          ]
+        }
+      ]
+    }
+  }
+}

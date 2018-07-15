@@ -1,0 +1,16 @@
+{
+  "name": "redux-react-code-splitting-project",
+  "short_name": "React",
+  "lang": "fr",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#0080FF",
+  "background_color": "#FFFFFF",
+  "icons": [
+    {
+      "src": "512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

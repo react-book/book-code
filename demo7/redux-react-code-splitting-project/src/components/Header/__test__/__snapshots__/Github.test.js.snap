@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Properly render Github component 1`] = `
+<a
+  className="css-GithubLink-kq2wbt5 css-11mxlk"
+  href="http://github.com/didierfranc/redux-react-starter"
+  rel="noopener"
+  target="_blank"
+>
+  <span
+    className="css-Github-kq2wbt2 css-GithubButton-kq2wbt3 css-126ym8f"
+  >
+    <svg
+      height="16"
+      style={
+        Object {
+          "position": "relative",
+          "top": 3,
+        }
+      }
+      width="14"
+    >
+      <path
+        d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74z"
+      />
+    </svg>
+     Star
+  </span>
+  <span
+    className="css-Github-kq2wbt2 css-GithubCount-kq2wbt4 css-fz6qm9"
+  >
+    0
+  </span>
+</a>
+`;
