@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Redux Worker</title>
+	<style>
+		body {
+			background-color: white;
+			color: black;
+			font-family: Arial;
+			text-align: center;
+			background-color: #D8D8D8;
+		}
+
+		table {
+	    padding: 8px 16px;
+		}
+
+		th {
+			cursor: pointer;
+		}
+
+		button {
+			background-color: rgba(0, 0, 0, 0.2);
+			cursor: pointer;
+			border: 0;
+			border-radius: 2px;
+			margin: 8px 16px;
+			padding: 8px 16px;
+			flex: 1;
+		}
+
+		button:active {
+			background-color: rgba(0, 0, 0, 0.5);
+		}
+
+		button:hover {
+			background-color: rgba(0, 0, 0, 0.3);
+		}
+
+		.user-table--body {
+			display: block;
+			flex-flow: column nowrap;
+			overflow: scroll;
+		}
+
+		.user-table--header,
+		.user-table--row {
+			flex: 1;
+			font-size: 14px;
+			cursor: pointer;
+			padding: 8px 16px;
+			border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+		}
+
+		.user-table--header + .user-table--header {
+			border-left: 1px solid rgba(0, 0, 0, 0.3);
+		}
+
+		.user-table--header:hover {
+			background-color: rgba(57, 220, 236, 0.10);
+		}
+
+		.user-table--header:active {
+			background-color: rgba(57, 220, 236, 0.25);
+		}
+
+		.react-spinner {
+		  position: absolute;
+		  width: 100px;
+		  height: 100px;
+		  top: 50%;
+		  left: 50%;
+		}
+
+		.react-spinner_bar {
+		  -webkit-animation: react-spinner_spin 1.2s linear infinite;
+		  -moz-animation: react-spinner_spin 1.2s linear infinite;
+		  animation: react-spinner_spin 1.2s linear infinite;
+		  border-radius: 5px;
+		  background-color: black;
+		  position: absolute;
+		  width: 20%;
+		  height: 7.8%;
+		  top: -3.9%;
+		  left: -10%;
+		}
+
+		@keyframes react-spinner_spin {
+		 0% { opacity: 1; }
+		 100% { opacity: 0.15; }
+		}
+
+		@-moz-keyframes react-spinner_spin {
+		 0% { opacity: 1; }
+		 100% { opacity: 0.15; }
+		}
+
+		@-webkit-keyframes react-spinner_spin {
+		 0% { opacity: 1; }
+		 100% { opacity: 0.15; }
+		}
+
+	</style>
+</head>
+<body>
+	<div id="app"></div>
+</body>
+	<script type="text/javascript" src="./dist/main.bundle.js"></script>
+</html>
