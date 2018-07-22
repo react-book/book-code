@@ -1,11 +1,12 @@
-import React, { createClass } from 'react'
+import React, { Component } from 'react'
 
-export default createClass({
-	getInitialState() {
-	    return {
-	        counter: 0  
-	    };
-	},
+class Counter extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            counter: 0
+        };
+    }
 
 	componentDidMount() {
 		setInterval(function() {
@@ -13,7 +14,7 @@ export default createClass({
 				counter: this.state.counter + 1
 			});
 		}.bind(this), 16);      
-	},
+	}
 
 	render() {
 		return (
@@ -33,5 +34,7 @@ export default createClass({
 				<h2>{ this.state.counter }</h2>
 			</div>
 		)
-	},
-});
+	}
+}
+
+export default Counter

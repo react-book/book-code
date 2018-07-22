@@ -1,14 +1,10 @@
-import React, { createClass } from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators} from 'redux'
 import Nqueen from '../components/Nqueen'
 import actions from '../actions/nqueen/nqueen.js'
 
-const NqueenContainer = createClass({
-	render() {
-		return <Nqueen {...this.props} />
-	}
-})
+const NqueenContainer = props => <Nqueen {...props} />
 
 function mapStateToProps(state) {
 	return {

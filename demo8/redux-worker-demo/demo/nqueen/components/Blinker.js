@@ -1,11 +1,12 @@
-import React, { createClass } from 'react'
+import React, { Component } from 'react'
 
-export default createClass({
-	getInitialState() {
-	    return {
-	        blink: true  
-	    };
-	},
+class Blinker extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            blink: true  
+        };
+    }
 
 	componentDidMount() {
 		setInterval(function() {
@@ -13,7 +14,7 @@ export default createClass({
 				blink: !this.state.blink
 			});
 		}.bind(this), 500);      
-	},
+	}
 
 	render() {
 		return (
@@ -33,5 +34,7 @@ export default createClass({
 				<h1>Blinker</h1>
 			</div>
 		)
-	},
-});
+	}
+}
+
+export default Blinker

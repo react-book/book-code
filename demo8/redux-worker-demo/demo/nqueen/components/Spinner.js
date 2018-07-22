@@ -1,20 +1,19 @@
-import React, { createClass } from 'react'
+import React, { Component } from 'react'
 
-export default createClass({
-	getInitialState() {
-	    return {
-	        degree: 0  
-	    };
-	},
-
+class Spinner extends Component {
+	constructor(props) {
+        super(props);
+        this.state = {
+            degree: 0
+        };
+    }
 	componentDidMount() {
 		setInterval(function() {
 			this.setState({
 				degree: this.state.degree + 5
 			});
 		}.bind(this), 16);      
-	},
-
+	}
 	render() {
 		return (
 			<div style={{
@@ -33,5 +32,6 @@ export default createClass({
 				<h1>Spinner</h1>
 			</div>
 		)
-	},
-});
+	}
+}
+export default Spinner

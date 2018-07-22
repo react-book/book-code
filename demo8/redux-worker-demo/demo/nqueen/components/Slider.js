@@ -1,11 +1,12 @@
-import React, { createClass } from 'react'
+import React, { Component } from 'react'
 
-export default createClass({
-	getInitialState() {
-	    return {
-	        steps: 0  
-	    };
-	},
+class Slider extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            steps: 0
+        };
+    }
 
 	componentDidMount() {
 		var v = 5;
@@ -22,7 +23,7 @@ export default createClass({
 				steps: this.state.steps + v
 			});
 		}.bind(this), 16);      
-	},
+	}
 
 	render() {
 		return (
@@ -42,5 +43,7 @@ export default createClass({
 				<h1>Slider</h1>
 			</div>
 		)
-	},
-});
+	}
+}
+
+export default Slider
