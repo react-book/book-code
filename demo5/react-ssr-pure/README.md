@@ -1,5 +1,5 @@
 # Server Side Rendering
-Server Side Rendering demo 极简版本
+Server Side Rendering demo 极简服务器版本
 
 ## 运行
 第一步，请先安装node（建议版本8.9.4）
