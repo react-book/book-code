@@ -1,0 +1,16 @@
+{
+  "name": "react-ssr-pure",
+  "version": "0.1.0",
+  "description": "react-ssr-pure project",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2"
+  }
+}
