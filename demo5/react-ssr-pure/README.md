@@ -1,5 +1,5 @@
 # Server Side Rendering
-Server Side Rendering demo
+Server Side Rendering demo 极简版本
 
 ## 运行
 第一步，请先安装node（建议版本8.9.4）
@@ -16,10 +16,10 @@ $ npm install
 $ npm install --registry=https://registry.npm.taobao.org
 ```
 
-第三步，进行构建
+第三步，启动
 
 ```bash
-$ npm run start-dev
+$ npm start
 ```
 
-第四步，打开 http://localhost:3000/，预览效果
+第四步，打开 http://127.0.0.1:3000/，预览效果
