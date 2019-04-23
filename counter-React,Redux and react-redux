@@ -1,0 +1,153 @@
+// 文件路径 ./src/reducers/index.js
+
+//属性不再只是一个值
+const initialState = {
+  value:0,
+  star :0
+}
+
+ const reducer = ( state =initialState, action) => {//这个地方的值是初始值
+  switch (action.type) {
+    case 'INCREMENT':
+      return Object.assign({},state,{ value : state.value+1})//对象中有多个属性所以必须这样写
+    case 'DECREMENT':
+      return Object.assign({},state,{ value : state.value-1})
+    case 'MULTIPLY':
+      return Object.assign({},state,{ value : state.value*2})
+    case 'STAR':
+      return Object.assign({},state,{ star : state.star+1})
+    default:
+      return state
+  }
+}
+export default reducer;
+
+//文件路径 ./src/components/Counter.js
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+const ButtonAct = (props) => <button onClick={props.onClick}> {props.text} </button>
+class Counter extends Component {
+  constructor(props) {
+    super(props);
+    this.incrementAsync = this.incrementAsync.bind(this);
+    this.incrementIfOdd = this.incrementIfOdd.bind(this);
+    this.incrementIfEven = this.incrementIfEven.bind(this);
+  }
+
+  incrementIfOdd() {
+    if (this.props.value % 2 !== 0) {
+      this.props.onIncrement()
+    }
+  }
+
+  incrementIfEven() {
+    if (this.props.value % 2 === 0) {
+      this.props.onIncrement()
+    }
+  }
+
+  incrementAsync() {
+    setTimeout(this.props.onIncrement, 1000)
+  }
+  
+  
+  render() {
+    const { value,star,onIncrement, onDecrement,onMultiply,onStar } = this.props
+    return (
+      <p>
+        Stars:{star}
+        <br/>
+        {' '}
+        <ButtonAct onClick={onStar} text="add star" />
+        {' '}
+        Clicked: {value} times
+        <br />
+        {' '}
+        <button onClick={onIncrement}>
+          +
+        </button>
+        {' '}
+        <ButtonAct onClick={onDecrement} text="-"/>
+        {' '}
+        <ButtonAct onClick={onMultiply} text="*" />
+        <br /> 
+        {' '}
+        <ButtonAct onClick={this.incrementIfOdd} text="Increment if odd"/>
+        <br/>
+        {' '}
+        <ButtonAct onClick={this.incrementAsync} text="Increment async"/>
+        <br/>  
+        {' '}
+        <ButtonAct onClick={this.incrementIfEven} text="Increment if even" />
+        <br/>
+      </p>
+    )
+  }
+}
+
+Counter.propTypes = {
+  value: PropTypes.number.isRequired,
+  onIncrement: PropTypes.func.isRequired,
+  onDecrement: PropTypes.func.isRequired
+}
+
+export default Counter
+
+//文件路径  ./src/index.js
+//store文件
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { createStore } from 'redux'
+import Counter from './components/Counter'
+import reducer from './reducers'  //reducers文件夹下的index.js文件并未对reducer进行命名，所以我将其命名为reducer或counter无所谓
+import {Provider,connect} from 'react-redux'
+
+const store = createStore(reducer) //reducer函数
+const rootEl = document.getElementById('root')
+
+//value也作为counter组件的属性之一
+const mapStateToProps = state => {
+  return {
+       value : state.value,
+       star : state.star
+    }
+}
+
+//将dispatch作为props传递给容器组件，可以是一个函数或者一个对象
+//返回的这个对象的三个属性方法都将作为counter组件的属性之一
+const mapDispatchToProps = state => {
+  return {
+    onIncrement : () => {
+      store.dispatch({
+        type:'INCREMENT'
+      });
+    },
+    onMultiply : () => {
+      store.dispatch({
+        type:'MULTIPLY'
+      });
+    },
+    onDecrement : () => {
+       store.dispatch({
+         type : 'DECREMENT'
+       });
+    },
+    onStar : () => {
+      store.dispatch({
+        type : 'STAR'
+      });
+   }
+  }
+}
+
+//将store中的有效信息派发给APP组件
+//将自定义组件包装转换生成容器组件
+const App = connect(mapStateToProps,mapDispatchToProps)(Counter)  //App是一个容器组件
+
+ReactDOM.render(
+  <Provider store={store}>
+    <App/>
+  </Provider>,rootEl
+)
+
+
